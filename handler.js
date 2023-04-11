@@ -8,7 +8,6 @@ const isSameOrAfter = require('dayjs/plugin/isSameOrAfter')
 const isSameOrBefore = require('dayjs/plugin/isSameOrBefore')
 const isBetween = require('dayjs/plugin/isBetween')
 const axios = require('axios')
-const url = "https://hooks.slack.com/services/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"
 
 const githubIssueUrl = "https://api.github.com/repos/gpioblink/todo/issues?state=open"
 

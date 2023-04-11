@@ -1,8 +1,9 @@
-name: Node.js CI
+name: Expired Notify (Hour)
 
 on:
   schedule:
     - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   build:

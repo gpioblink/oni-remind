@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Add mask for notification urls
       - uses: actions/checkout@v3
       - name: Checkout config repository
         uses: actions/checkout@v3

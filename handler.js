@@ -28,7 +28,7 @@ exports.handler = async (event) => {
   // parse mathods
 
   for (let [key, value] of Object.entries(reminders['reminders'])) {
-    console.log(`name: ${key} repo: ${value['method']} url: ${methods['methods'][value['method']].url}`);
+    // console.log(`name: ${key} repo: ${value['method']} url: ${methods['methods'][value['method']].url}`);
   }
 
   // // get issues from github

@@ -23,4 +23,5 @@ jobs:
         with:
           node-version: 18.x
       - run: npm i
+      - run: ls config
       - run: node index.js expired

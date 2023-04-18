@@ -24,9 +24,7 @@ exports.handler = async (event) => {
   // parse config
   try {
     const methods = yaml.load(fs.readFileSync(`${workDir}/config/notification-methods.yml`, 'utf8'));
-    const reminders = yaml.load(fs.readFileSync(`${workDir}/config/reminders.yml`, 'utf8'));
-    console.log(methods);
-    console.log(reminders); 
+    const reminders = yaml.load(fs.readFileSync(`${workDir}/config/reminders.yml`, 'utf8')); 
   } catch (e) {
     console.log(e);
   }

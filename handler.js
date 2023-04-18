@@ -22,11 +22,13 @@ dayjs.tz.setDefault("Asia/Tokyo")
 
 exports.handler = async (event) => {
   // parse config
-  try {
-    const methods = yaml.load(fs.readFileSync(`${workDir}/config/notification-methods.yml`, 'utf8'));
-    const reminders = yaml.load(fs.readFileSync(`${workDir}/config/reminders.yml`, 'utf8')); 
-  } catch (e) {
-    console.log(e);
+  const methods = yaml.load(fs.readFileSync(`${workDir}/config/notification-methods.yml`, 'utf8'));
+  const reminders = yaml.load(fs.readFileSync(`${workDir}/config/reminders.yml`, 'utf8')); 
+
+  // parse mathods
+
+  for (let [key, value] of Object.entries(reminders['reminders'])) {
+    console.log(`name: ${key} repo: ${value['method']} url: ${methods['methods'][value['method']].url}`);
   }
 
   // // get issues from github

@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Add mask for notification urls
+        run: |
+          echo "::add-mask::hooks.slack.com"
+          echo "::add-mask::discord.com/api/webhooks" 
       - uses: actions/checkout@v3
       - name: Checkout config repository
         uses: actions/checkout@v3
@@ -23,4 +27,5 @@ jobs:
         with:
           node-version: 18.x
       - run: npm i
+      - run: ls config
       - run: node index.js deadline

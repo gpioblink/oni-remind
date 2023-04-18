@@ -6,11 +6,13 @@ GitHubのissueから期限が近いものをリマインドしてくれるツー
 
 # 使い方
 
-## 
+## 期限を通知してくれるissue
+
+「MM/DD タスク名」のように、月と日付から始まるissueについて期限を通知します。
 
 ## インストール方法
 
-1. config配置用のリポジトリを別に作り、`notification-methods.yml`と`reminders.yml`を配置する
+1. config配置用のリポジトリを別に作り、`notification-methods.yml`と`reminders.yml`を配置する (設定の例: https://github.com/gpioblink/oni-remind-config-skeleton )
 1. このリポジトリをフォークする
 1. フォークしたリポジトリの設定で、1で作ったリポジトリ名を`CONFIG_REPO_NAME`として環境変数に入れる (例: `gpioblink/oni-remind-config`)
 1. フォークしたリポジトリの設定で、1で作ったリポジトリと、リマインドしたいリポジトリに権限のあるParsonal Access Tokenをつくり、`GH_PAT`としてシークレットに入れる。PATの権限はContentsとIssuesにRead-only Accessをつける

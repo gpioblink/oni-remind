@@ -24,13 +24,16 @@ exports.handler = async (event) => {
   const reminders = yaml.load(fs.readFileSync(`${workDir}/config/reminders.yml`, 'utf8')); 
 
   // parse methods
-
   for (let [key, value] of Object.entries(reminders['reminders'])) {
     console.log(`start sending reminder for ${key}`);
     if(methods['methods'][value['method']].provider !== "slack-webhook") {
       console.log("currently only slack-webhook is supported, skip");
       continue;
     }
+
+    // to avoid hooks url expose, add mask
+    console.log(`::add-mask::${methods['methods'][value['method']].url}`)
+
     runSlackReminder(value['repo'], methods['methods'][value['method']].url, event.type);
   }
   

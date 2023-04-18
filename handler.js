@@ -31,9 +31,6 @@ exports.handler = async (event) => {
       continue;
     }
 
-    // to avoid hooks url expose, add mask
-    console.log(`::add-mask::${methods['methods'][value['method']].url}`)
-
     runSlackReminder(value['repo'], methods['methods'][value['method']].url, event.type);
   }
   

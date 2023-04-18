@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Add mask for notification urls
-        run: |
-          echo "::add-mask::hooks.slack.com" 
       - uses: actions/checkout@v3
       - name: Checkout config repository
         uses: actions/checkout@v3
@@ -27,4 +24,4 @@ jobs:
           node-version: 18.x
       - run: npm i
       - run: ls config
-      - run: node index.js expired
+      - run: node index.js expired > /dev/null

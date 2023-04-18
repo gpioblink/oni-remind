@@ -3,7 +3,7 @@ name: Near Deadline Notify (Day)
 on:
   schedule:
     - cron: '1 0,12 * * *'
-  push:
+  workflow_dispatch:
 
 jobs:
   notify:

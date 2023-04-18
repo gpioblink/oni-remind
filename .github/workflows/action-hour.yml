@@ -3,7 +3,7 @@ name: Expired Notify (Hour)
 on:
   schedule:
     - cron: '0 * * * *'
-  push:
+  workflow_dispatch:
 
 jobs:
   notify:

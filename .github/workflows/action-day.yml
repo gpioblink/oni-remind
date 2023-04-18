@@ -26,3 +26,5 @@ jobs:
       - run: npm i
       - run: ls config
       - run: node index.js deadline > /dev/null
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}

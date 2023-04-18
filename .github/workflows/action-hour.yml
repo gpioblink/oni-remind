@@ -25,3 +25,5 @@ jobs:
       - run: npm i
       - run: ls config
       - run: node index.js expired > /dev/null
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
